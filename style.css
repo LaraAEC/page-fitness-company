@@ -1,0 +1,117 @@
+body {
+  margin: 0; /*tirando os espaços ao redor do body criados pelo google (de 8px)*/
+
+  font-family: "Open Sans", sans-serif;
+
+  background: linear-gradient(180deg, rgb(227, 255, 248, 0) 82.08%, rgb(227, 255, 248, 0.38) 100%);
+
+  min-height: 100vh; /* O body vai ocupar no mínimo 100% da viewport, para não ficar espaço branco.
+  Aqui faço com que toda parte do body ocupe o que existe de vizualização da tela de altura. Quero 100% do viewport (área disponível visível do meu dispositivo) height*/
+}
+
+.page {
+  width: 1000px; /*largura da minha caixa da página que engloba tudo, só não a balls que vou definir sobreposta à página com position fixed na tela.*/
+  margin: 0 auto;
+  padding-top: 65px; /*troquei a antiga margem por padding (preenchimento interno), pois ela estava me dando rolamento para baixo na página, pois estava empurrando o conteúdo/body para baixo*/
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /*espaço entre os elementos da flex-box, colocando um em cada canto.*/
+  align-items: center; /*alinhando os itens da flex pelo seu elemento principal, ao meio dele*/
+  
+  margin-bottom: 55px; /*dando espaço na margem do nav para o main*/
+}
+
+ul {
+  display: flex; /*caixa flexível posso mexer e colocar os elementos em coluna ou linha*/
+  gap: 48px; /*espaço entre os itens do flex*/
+  list-style: none; /*tirando as bolinhas e enfeites da minha lista*/
+  margin: 0; /*Esta caixa ul está dentro de outra caixa a Nav, nesse caso zero margem para meu elemento limpo sem margem com relação ao navegador*/
+  padding: 0; /*deixando meu elemento limpo sem o padding do navegador*/
+}
+
+a {
+  color: #1f1534; /*para toda âncora da página*/
+  text-decoration: none;
+}
+
+ul li a { /*só para a âncora que está no li na ul*/
+    opacity: 0.5;
+}
+
+ul li a:hover { /*só para a ?âncora que está no li na ul*/
+  font-weight: bold;
+  opacity: 1;
+}
+
+#title, ul {
+  font-family: "Mulish", sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*poderia ter feito um gap com o valor entre eles previsto no layout, mas como no layout eles estão cada um colado em uma extremidade da caixa, usei space-between*/
+}
+
+#title {
+  font-size: 49px;
+  line-height: 56px;
+  color: #1f1534;
+  font-weight: normal; /*retirando o negrito*/
+  width: 490px;/*largura para fazer a quebra de linha dele, mas poderia ser feita no html com <br/>*/
+}
+
+#title span {
+  color: #89c5cc;
+  font-weight: bold; /*só este em negrito no layout*/
+}
+
+#subtitle {
+  font-size: 14px;
+  line-height: 28px;
+  color: #7d7987;
+  margin: 40px 0; /*Criando espaçamento, margem pra cima e baixo de 40 pixels, para afastar o parágrafo do h1 e do button.*/
+}
+
+button {
+  color: white;
+  text-transform: uppercase; /*colocando todas as letras em maiúsculo*/
+  font-family: "Open Sans", sans-serif;
+
+  background: #69B99D; /*colocando a cor de fundo, poderia ser imagem de fundo também, no caso é cor*/
+  border: 0; /*retirando a borda preta feia do navegador*/
+  padding: 14px 32px 15px; /*optamos por colocar o padding, para dar preenchimento e tamanho almejado ao button, ao invés de definir largura/altura, até pq o navegador ja definia um padding, e eu teria que zerar esse padding para definir a larg/alt sem que fosse somado o padding do navegador a elas.*/
+
+  display: flex; /*os elementos estavam um ao lado do outro já porque estavam inline; mas colocamos flex para podermos mexer em mais propriedades, como align-items e justify-content. */
+  align-items: center; /*mesma altura, alinhados*/
+  justify-content: center; /*separando os elementos (zap e text) dessa flex-box (button) ao meio, com espaço, porém ao centro da caixa.*/
+  gap: 10px; /*espaço entre o zap e o texto do botão*/
+
+  border-radius: 4px; /*arredondando as bordas do meu botão*/
+
+  cursor: pointer; /*posso fazer isso no button*/
+}
+
+button:hover {
+  background: #4ea788;
+
+}
+
+footer {
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center; /*é texto então essa propriedade que alinha ele na página*/
+  margin-top: 80px; /*distância do footer para a section que tem o text e tbm da imagem*/
+}
+
+footer a {
+  font-weight: bold;
+}
+
+#balls {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
